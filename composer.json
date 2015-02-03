@@ -1,6 +1,6 @@
 {
-  "name": "c006/yii2-alert",
-  "description": "Alert messages on page",
+  "name": "c006/yii2-alerts",
+  "description": "Display simple alert message(s) on page",
   "type": "yii2-extension",
   "keywords": [
     "yii2",
