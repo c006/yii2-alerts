@@ -34,17 +34,21 @@ Required
 Options
 -------
 
+Constants:
+>
+        const ALERT_DANGER  = 'alert-danger';
+        const ALERT_WARNING = 'alert-warning';
+        const ALERT_INFO    = 'alert-info';
+        const ALERT_SUCCESS = 'alert-success';
+
 **message =>**  {string}  
 ` Alert message (HTML) `
 
 **alert_type =>**  {string}  
-`      * alert-danger
-       * alert-warning
-       * alert-info
-       * alert-success `
+` Use constants. Default ALERT_INFO `
 
 **close =>**  {boolean}  
-` Show close link for alert `
+` Show close link for alert. Default enabled `
 
 **countdown =>**  {int}  
 ` Automatically remove alert in X seconds `
@@ -58,19 +62,23 @@ Set message
 >
     <?php
     Alerts::setMessage("Hello World");
+    Alerts::setAlertType(Alerts::ALERT_SUCCESS);
     ?>
 
 Display message
 >
-        <?= Alerts::widget([
-                               'message'    => Alerts::getMessage(),
-                               'alert_type' => 'alert-warning',
-                               'close'      => TRUE,
-                               'countdown'  => 5]); ?>
+        <?= Alerts::widget(['countdown'  => 5]); ?>
+        /* Auto close message in 5 seconds */
 
 
+Display message (no close)
+>
+        <?= Alerts::widget(['countdown'  => 5, 'close' => FALSE]); ?>
+        /* Auto close message in 5 seconds */
 
-
+Display message (direct message)
+>
+        <?= Alerts::widget(['message' => 'Hello World']); ?>
 
 Comments / Suggestions
 --------------------
