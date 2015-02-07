@@ -33,9 +33,7 @@ class AppAssets extends AssetBundle
     /**
      * @inheritdoc
      */
-    public $js = [
-        '',
-    ];
+    public $js = [];
 
     /**
      * @inheritdoc
