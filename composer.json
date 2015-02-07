@@ -6,7 +6,8 @@
     "yii2",
     "extension",
     "widgets",
-    "alert"
+    "alert",
+    "message"
   ],
   "license": "MIT",
   "authors": [
