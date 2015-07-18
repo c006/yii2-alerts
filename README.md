@@ -1,7 +1,7 @@
 Yii2 Alerts
 ===================
 
-
+**Updated: July, 2015**
 
 Installation
 ------------
