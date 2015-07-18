@@ -51,6 +51,11 @@ Options
 ` Automatically remove alert in X seconds `
 
 
+Demo
+-------
+
+Demo: [http://demo.c006.us](http://demo.c006.us)
+
 
 Usage
 -----
