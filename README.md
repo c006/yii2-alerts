@@ -34,21 +34,18 @@ Required
 Options
 -------
 
-Constants:
->
-        const ALERT_DANGER  = 'alert-danger';
-        const ALERT_WARNING = 'alert-warning';
-        const ALERT_INFO    = 'alert-info';
-        const ALERT_SUCCESS = 'alert-success';
-
 **message =>**  {string}  
 ` Alert message (HTML) `
 
-**alert_type =>**  {string}  
-` Use constants. Default ALERT_INFO `
+**alert_type =>**  {string}
+
++ Alerts::ALERT_DANGER
++ Alerts::ALERT_WARNING
++ Alerts::ALERT_INFO
++ Alerts::ALERT_SUCCESS
 
 **close =>**  {boolean}  
-` Show close link for alert. Default enabled `
+` Show close link for alert `
 
 **countdown =>**  {int}  
 ` Automatically remove alert in X seconds `
@@ -59,26 +56,20 @@ Usage
 -----
 
 Set message
+
 >
-    <?php
-    Alerts::setMessage("Hello World");
-    Alerts::setAlertType(Alerts::ALERT_SUCCESS);
-    ?>
+    Alerts::setMessage('Session Timeout');
+    Alerts::setAlertType(Alerts::ALERT_WARNING);
+    Alerts::setCountdown(10); /* optional */
+    
 
 Display message
 >
-        <?= Alerts::widget(['countdown'  => 5]); ?>
-        /* Auto close message in 5 seconds */
+    <?= Alerts::widget() ?>
 
 
-Display message (no close)
->
-        <?= Alerts::widget(['countdown'  => 5, 'close' => FALSE]); ?>
-        /* Auto close message in 5 seconds */
 
-Display message (direct message)
->
-        <?= Alerts::widget(['message' => 'Hello World']); ?>
+
 
 Comments / Suggestions
 --------------------

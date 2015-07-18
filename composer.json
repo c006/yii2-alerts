@@ -1,13 +1,12 @@
 {
   "name": "c006/yii2-alerts",
-  "description": "Displays simple alert message(s) on page",
+  "description": "Display simple alert message(s) on page",
   "type": "yii2-extension",
   "keywords": [
     "yii2",
     "extension",
     "widgets",
-    "alert",
-    "message"
+    "alert"
   ],
   "license": "MIT",
   "authors": [
