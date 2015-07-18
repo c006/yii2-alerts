@@ -19,9 +19,21 @@ use yii\bootstrap\Widget;
 class Alerts extends Widget
 {
 
-    const ALERT_DANGER  = 'alert-danger';
+    /**
+     *
+     */
+    const ALERT_DANGER = 'alert-danger';
+    /**
+     *
+     */
     const ALERT_WARNING = 'alert-warning';
-    const ALERT_INFO    = 'alert-info';
+    /**
+     *
+     */
+    const ALERT_INFO = 'alert-info';
+    /**
+     *
+     */
     const ALERT_SUCCESS = 'alert-success';
 
     /** @var  $id string */
@@ -41,6 +53,46 @@ class Alerts extends Widget
 
     /** @var  $countdown int */
     public $countdown;
+
+
+    /**
+     * Add css
+     */
+    function init()
+    {
+        parent::init();
+        $view = $this->getView();
+        AppAssets::register($view);
+    }
+
+    /**
+     * @return bool
+     */
+    function run()
+    {
+        $this->id = "ALERT-" . time();
+        $message = ($this->message) ? $this->message : Alerts::getMessage();
+        $alert_type = ($this->alert_type) ? $this->alert_type : Alerts::getAlertType();
+        $this->countdown = ($this->countdown) ? $this->countdown : Alerts::getCountdown();
+        if (!$alert_type) {
+            $alert_type = Alerts::ALERT_INFO;
+        }
+        if ($message) {
+            /* ~ Clears message after use */
+            Alerts::clearMessage();
+
+            return $this->render('alerts',
+                [
+                    'id'         => $this->id,
+                    'message'    => $message,
+                    'alert_type' => $alert_type,
+                    'close'      => $this->close,
+                    'countdown'  => $this->countdown,
+                ]);
+        }
+
+        return FALSE;
+    }
 
     /**
      * @param $message
@@ -66,41 +118,6 @@ class Alerts extends Widget
         Yii::$app->session->set('C006_COUNTDOWN', $countdown);
     }
 
-    /**
-     * Add css
-     */
-    function init()
-    {
-        parent::init();
-        $view = $this->getView();
-        AppAssets::register($view);
-    }
-
-    function run()
-    {
-        $this->id        = "ALERT-" . time();
-        $message         = ($this->message) ? $this->message : Alerts::getMessage();
-        $alert_type      = ($this->alert_type) ? $this->alert_type : Alerts::getAlertType();
-        $this->countdown = ($this->countdown) ? $this->countdown : Alerts::getCountdown();
-        if (!$alert_type) {
-            $alert_type = Alerts::ALERT_INFO;
-        }
-        if ($message) {
-            /* ~ Clears message after use */
-            Alerts::clearMessage();
-
-            return $this->render('alerts',
-                                 [
-                                     'id'         => $this->id,
-                                     'message'    => $message,
-                                     'alert_type' => $alert_type,
-                                     'close'      => $this->close,
-                                     'countdown'  => $this->countdown,
-                                 ]);
-        }
-
-        return FALSE;
-    }
 
     /**
      * @return mixed
@@ -118,12 +135,13 @@ class Alerts extends Widget
         return Yii::$app->session->get('C006_ALERT_TYPE');
     }
 
+
     /**
-     *
+     * @return mixed
      */
     static public function getCountdown()
     {
-        Yii::$app->session->get('C006_COUNTDOWN');
+        return Yii::$app->session->get('C006_COUNTDOWN');
     }
 
     /**
