@@ -27,7 +27,7 @@ class AppAssets extends AssetBundle
      * @inheritdoc
      */
     public $css = [
-        'c006-alerts.css',
+        'css/c006-alerts.css'
     ];
 
     /**

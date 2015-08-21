@@ -1,10 +1,5 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: user
- * Date: 2/3/2015
- * Time: 9:37 AM
- */
+
 namespace c006\alerts;
 
 use c006\alerts\assets\AppAssets;

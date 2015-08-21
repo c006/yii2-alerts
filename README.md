@@ -1,7 +1,9 @@
 Yii2 Alerts
 ===================
 
-**Updated: July, 2015**
+**Updated: August, 2015**
+
++ Added scss and css files to set your own colors
 
 Installation
 ------------

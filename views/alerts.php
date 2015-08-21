@@ -1,11 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: user
- * Date: 2/3/2015
- * Time: 10:50 AM
- */
-
 /** @var $id String */
 /** @var $message String */
 /** @var $alert_type String */
@@ -33,10 +26,10 @@
                 setTimeout(function () {
                     jQuery('#<?= $id ?>')
                         .animate({
-                                     opacity: 0.0
-                                 }, 1000, function () {
-                                     jQuery('#<?= $id ?>').empty().remove();
-                                 });
+                            opacity: 0.0
+                        }, 1000, function () {
+                            jQuery('#<?= $id ?>').empty().remove();
+                        });
                 }, <?= $countdown * 1000 ?>);
             });
         </script>
