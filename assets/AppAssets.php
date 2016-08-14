@@ -27,7 +27,7 @@ class AppAssets extends AssetBundle
      * @inheritdoc
      */
     public $css = [
-        'css/c006-alerts.css'
+        'css/c006-alerts.css',
     ];
 
     /**
@@ -38,10 +38,7 @@ class AppAssets extends AssetBundle
     /**
      * @inheritdoc
      */
-    public $depends = [
-        'yii\web\YiiAsset',
-        'yii\bootstrap\BootstrapAsset',
-    ];
+    public $depends = [];
 
     /**
      * @var array

@@ -65,9 +65,9 @@ class Alerts extends Widget
      */
     function run()
     {
-        $this->id = "ALERT-" . time();
-        $message = ($this->message) ? $this->message : Alerts::getMessage();
-        $alert_type = ($this->alert_type) ? $this->alert_type : Alerts::getAlertType();
+        $this->id        = "ALERT-" . time();
+        $message         = ($this->message) ? $this->message : Alerts::getMessage();
+        $alert_type      = ($this->alert_type) ? $this->alert_type : Alerts::getAlertType();
         $this->countdown = ($this->countdown) ? $this->countdown : Alerts::getCountdown();
         if (!$alert_type) {
             $alert_type = Alerts::ALERT_INFO;
